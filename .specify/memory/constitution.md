@@ -44,11 +44,12 @@
 
 **Rules:**
 - Feature Encapsulation: Code MUST be grouped by feature (e.g., `src/features/{featureName}/`)
-- Atomic Design Scope: Implement Atomic Design (atoms, molecules, organisms) strictly WITHIN the scope of each feature
+- UI Component Structure: UI components MUST be organized in a flat structure within each feature folder (e.g., `src/features/{featureName}/components/`). Group by functional containment rather than atomic hierarchy
+- Common Components: Prioritize Tremor components for common UI patterns before creating custom components
 - A `shared` feature folder may exist for truly global UI elements, but its use must be minimized
 - React Patterns: You MUST prioritize the React Composition Pattern and Compound Components to avoid "prop drilling" and massive configuration objects
 
-**Rationale:** Feature isolation reduces coupling, clarifies ownership, and enables independent deployment.
+**Rationale:** Feature isolation reduces coupling, clarifies ownership, and enables independent deployment. Flat component structure avoids unnecessary abstraction layers.
 
 ---
 
@@ -132,13 +133,14 @@
 - All code reviews MUST verify alignment with these principles
 - Complexity must be justified; simpler alternatives should be documented if rejected
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-26 | **Last Amended**: 2026-03-26
+**Version**: 1.0.1 | **Ratified**: 2026-03-26 | **Last Amended**: 2026-03-26
 
 <!--
 # Sync Impact Report
-- Version change: N/A → 1.0.0 (initial creation)
-- Added principles: I. Pragmatism, II. Tech Stack, III. DDD, IV. Feature-Based, V. State Management, VI. Testing, VII. Prohibited Patterns
-- Added sections: Technology Stack & Constraints, Development Standards, Governance
+- Version change: 1.0.0 → 1.0.1 (PATCH)
+- Modified principles: IV. Feature-Based Architecture - removed Atomic Design reference, added UI component structure guideline
+- Added sections: None
+- Removed sections: None
 - Templates requiring updates: ✅ All templates compliant (no updates needed)
-- Follow-up TODOs: None
+- Other files updated: docs/architecture.md (Atomic Design reference removed)
 -->

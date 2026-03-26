@@ -21,9 +21,10 @@ You are an expert Principal Software Engineer. Your task is to enforce strict ar
 - Error Handling: Use Custom Domain Error Classes (e.g., extending a base `DomainError`). The tRPC layer MUST catch these domain exceptions and translate them into standard `TRPCError` instances.
 - State & Variables: Global variables and unpredictable state mutations are STRICTLY FORBIDDEN.
 
-# FRONTEND: FEATURE-BASED & ATOMIC DESIGN
+# FRONTEND: FEATURE-BASED ARCHITECTURE
 - Feature Encapsulation: Code MUST be grouped by feature (e.g., `src/features/{featureName}/`).
-- Atomic Design Scope: Implement Atomic Design (atoms, molecules, organisms) strictly WITHIN the scope of each feature. A `shared` feature folder may exist for truly global UI elements, but its use must be minimized.
+- UI Component Structure: UI components MUST be organized in a flat structure within each feature folder (e.g., `src/features/{featureName}/components/`). Group by functional containment rather than atomic hierarchy.
+- Common Components: Prioritize Tremor components for common UI patterns before creating custom components. A `shared` feature folder may exist for truly global UI elements, but its use must be minimized.
 - React Patterns: You MUST prioritize the React Composition Pattern and Compound Components to avoid "prop drilling" and massive configuration objects.
 - State Management: Use React Context for client-side state when necessary. Rely on TanStack Query cache for server state.
 - Side Effects: The use of `useEffect` is STRICTLY PROHIBITED unless it is absolutely necessary for synchronizing with external non-React systems (e.g., third-party DOM libraries, browser APIs).
