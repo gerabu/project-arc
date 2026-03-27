@@ -21,7 +21,7 @@
 - Database & ORM: PostgreSQL with Drizzle ORM MUST be used
 - API Layer: TanStack Query communicating via tRPC MUST be used
 - Data Validation: Zod MUST be used for all input boundaries (tRPC routers and domain entities)
-- Styling: Tailwind CSS combined with Tremor components MUST be used
+- Styling: Tailwind CSS combined with shadcn components MUST be used
 
 **Rationale:** Consistency in tooling enables faster onboarding and predictable maintenance.
 
@@ -45,7 +45,7 @@
 **Rules:**
 - Feature Encapsulation: Code MUST be grouped by feature (e.g., `src/features/{featureName}/`)
 - UI Component Structure: UI components MUST be organized in a flat structure within each feature folder (e.g., `src/features/{featureName}/components/`). Group by functional containment rather than atomic hierarchy
-- Common Components: Prioritize Tremor components for common UI patterns before creating custom components
+- Common Components: Prioritize shadcn components for common UI patterns before creating custom components
 - A `shared` feature folder may exist for truly global UI elements, but its use must be minimized
 - React Patterns: You MUST prioritize the React Composition Pattern and Compound Components to avoid "prop drilling" and massive configuration objects
 
@@ -95,7 +95,7 @@
 | Database | PostgreSQL | With Drizzle ORM |
 | API | tRPC | Via TanStack Query |
 | Validation | Zod | All input boundaries |
-| Styling | Tailwind CSS + Tremor | Components required |
+| Styling | Tailwind CSS + shadcn | Components required |
 | Unit/Integration Tests | Vitest + RTL | AAA pattern mandatory |
 | E2E Tests | Playwright or Cypress | Browser-based |
 

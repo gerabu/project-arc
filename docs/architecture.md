@@ -12,7 +12,7 @@ You are an expert Principal Software Engineer. Your task is to enforce strict ar
 - Database & ORM: PostgreSQL with Drizzle ORM.
 - API Layer: TanStack Query communicating via tRPC.
 - Data Validation: Zod MUST be used for all input boundaries (tRPC routers and domain entities).
-- Styling: Tailwind CSS combined with Tremor components.
+- Styling: Tailwind CSS combined with shadcn components.
 
 # BACKEND: DOMAIN-DRIVEN DESIGN (DDD)
 - Layers: Strictly separate Domain, Application (Use Cases), Infrastructure, and Presentation (tRPC) layers.
@@ -24,7 +24,7 @@ You are an expert Principal Software Engineer. Your task is to enforce strict ar
 # FRONTEND: FEATURE-BASED ARCHITECTURE
 - Feature Encapsulation: Code MUST be grouped by feature (e.g., `src/features/{featureName}/`).
 - UI Component Structure: UI components MUST be organized in a flat structure within each feature folder (e.g., `src/features/{featureName}/components/`). Group by functional containment rather than atomic hierarchy.
-- Common Components: Prioritize Tremor components for common UI patterns before creating custom components. A `shared` feature folder may exist for truly global UI elements, but its use must be minimized.
+- Common Components: Prioritize shadcn components for common UI patterns before creating custom components. A `shared` feature folder may exist for truly global UI elements, but its use must be minimized.
 - React Patterns: You MUST prioritize the React Composition Pattern and Compound Components to avoid "prop drilling" and massive configuration objects.
 - State Management: Use React Context for client-side state when necessary. Rely on TanStack Query cache for server state.
 - Side Effects: The use of `useEffect` is STRICTLY PROHIBITED unless it is absolutely necessary for synchronizing with external non-React systems (e.g., third-party DOM libraries, browser APIs).
