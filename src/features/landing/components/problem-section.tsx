@@ -96,7 +96,7 @@ export function ProblemSection() {
             Sound familiar?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground animate-fade-in-up" style={{ animationDelay: "100ms" }}>
-            You're not alone. Every architecture firm we talk to faces the same
+            You&apos;re not alone. Every architecture firm we talk to faces the same
             challenges—manual processes that slow you down.
           </p>
         </div>
