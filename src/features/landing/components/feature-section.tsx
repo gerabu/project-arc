@@ -83,20 +83,20 @@ function TimelineIcon({ status, index }: { status: TimelineItem["status"]; index
 
 export function FeatureSection() {
   return (
-    <section className="view-animate-single py-20 md:py-28 bg-muted/30">
+    <section className="py-20 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center md:mb-16 animate-fade-in animate-range-[entry_10%_contain_25%]">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+        <div className="mb-12 text-center md:mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl animate-fade-in-up">
             Keep Your Clients Informed—Automatically
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground animate-fade-in-up" style={{ animationDelay: "100ms" }}>
             The client-facing timeline that transforms how you communicate project
             status. No more ad-hoc updates.
           </p>
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <Card className="overflow-hidden border-border/60 bg-card/50 backdrop-blur-sm animate-zoom-in animate-range-[entry_10%_contain_25%]">
+          <Card className="overflow-hidden border-border/60 bg-card/50 backdrop-blur-sm animate-fade-in-up" style={{ animationDelay: "200ms" }}>
             <CardHeader className="border-b border-border/40 bg-muted/20 pb-6">
               <CardTitle className="text-base font-medium text-muted-foreground tracking-wider">
                 Project Timeline — Riverside Residence
@@ -116,7 +116,8 @@ export function FeatureSection() {
                     return (
                       <div
                         key={item.title}
-                        className="relative flex gap-5 pb-8 last:pb-0"
+                        className="relative flex gap-5 pb-8 last:pb-0 animate-fade-in-up"
+                        style={{ animationDelay: `${(index + 3) * 100}ms` }}
                       >
                         {/* Circle */}
                         <div

@@ -89,13 +89,13 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="view-animate-single py-20 md:py-28 bg-muted/30">
+    <section className="py-20 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center md:mb-16 animate-fade-in animate-range-[entry_10%_contain_25%]">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+        <div className="mb-12 text-center md:mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl animate-fade-in-up">
             Sound familiar?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground animate-fade-in-up" style={{ animationDelay: "100ms" }}>
             You're not alone. Every architecture firm we talk to faces the same
             challenges—manual processes that slow you down.
           </p>
@@ -105,13 +105,14 @@ export function ProblemSection() {
           {problems.map((problem, index) => (
             <Card
               key={problem.title}
-              className="border-border/60 bg-card/50 transition-colors hover:bg-card animate-slide-in-bottom animate-range-[entry_10%_contain_25%] animate-delay-100"
+              className="group border-border/60 bg-card/50 transition-all duration-500 hover:bg-card hover:-translate-y-1 animate-fade-in-up"
+              style={{ animationDelay: `${(index + 2) * 100}ms` }}
             >
               <CardHeader>
-                <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                   {problem.icon}
                 </div>
-                <CardTitle className="text-lg font-semibold">
+                <CardTitle className="text-lg font-semibold transition-colors duration-300 group-hover:text-primary">
                   {problem.title}
                 </CardTitle>
               </CardHeader>
