@@ -24,12 +24,14 @@ You are an expert Principal Software Engineer. Your task is to enforce strict ar
 # FRONTEND: FEATURE-BASED ARCHITECTURE
 - Feature Encapsulation: Code MUST be grouped by feature (e.g., `src/features/{featureName}/`).
 - UI Component Structure: UI components MUST be organized in a flat structure within each feature folder (e.g., `src/features/{featureName}/components/`). Group by functional containment rather than atomic hierarchy.
-- Common Components: Prioritize shadcn components for common UI patterns before creating custom components. A `shared` feature folder may exist for truly global UI elements, but its use must be minimized.
+- Common Components: Prioritize shadcn components for common UI patterns before creating custom components.
 - React Patterns: You MUST prioritize the React Composition Pattern and Compound Components to avoid "prop drilling" and massive configuration objects.
 - State Management: Use React Context for client-side state when necessary. Rely on TanStack Query cache for server state.
 - Side Effects: The use of `useEffect` is STRICTLY PROHIBITED unless it is absolutely necessary for synchronizing with external non-React systems (e.g., third-party DOM libraries, browser APIs).
+- Follow the color scheme defined in src/app/globals.css
 
 # TESTING STANDARDS
+- Test is NOT OPTIONAL
 - Frameworks: Vitest + React Testing Library (for Unit and Integration tests) and Playwright or Cypress (for E2E tests).
 - Structure: EVERY single test MUST strictly follow the AAA pattern: Arrange, Act, Assert. Add comments `// Arrange`, `// Act`, `// Assert` in the test blocks to enforce this structure.
 - Coverage: All pure domain logic, use cases, and complex UI interactions must be unit-tested.
