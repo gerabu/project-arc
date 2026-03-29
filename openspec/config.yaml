@@ -1,0 +1,41 @@
+schema: spec-driven
+
+context: |
+  Project: arc-flow
+  Role: Full-stack Next.js Proof of Concept (POC)
+  Framework: Next.js (Fullstack)
+  Architecture: Strict Feature-Based Architecture, Domain-Driven Design (DDD)
+  Language: TypeScript
+  Runtime: Node.js / React
+  Styling: Tailwind CSS v4 + shadcn/ui + tw-animate-css
+  DB: PostgreSQL + Drizzle ORM
+  API: tRPC controllers only (with TanStack Query on frontend)
+  Validation: Zod for all input boundaries (tRPC routers and domain entities)
+  Layers:
+    - Domain: pure business logic, no framework/or ORM/tRPC coupling
+    - Application: Use Cases
+    - Infrastructure: persistence, tRPC adapter, database
+    - Presentation: tRPC controllers
+  Error-handling:
+    - Custom DomainError classes
+    - tRPC translates domain exceptions to TRPCError
+  Frontend patterns:
+    - Feature encapsulation under src/features/{featureName}
+    - flat components in each feature folder and shadcn usage
+    - React composition/compound components
+    - React Context only when needed
+    - TanStack Query for server state
+    - useEffect prohibited unless necessary for external systems
+  Testing:
+    - Mandatory tests
+    - Vitest + React Testing Library for unit/integration
+    - Playwright or Cypress for E2E
+    - AAA pattern enforced in all tests
+
+rules:
+  proposal:
+    - Keep proposals under 500 words
+    - Include a "Non-goals" section
+  tasks:
+    - Break tasks into chunks of max 2 hours
+
